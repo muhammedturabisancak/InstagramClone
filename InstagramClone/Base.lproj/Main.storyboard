@@ -75,14 +75,50 @@
                     <view key="view" contentMode="scaleToFill" id="ZvV-Lx-8tF">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="select" translatesAutoresizingMaskIntoConstraints="NO" id="nLE-zx-iiM">
+                                <rect key="frame" x="54" y="107" width="285" height="275"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="275" id="3Tx-tw-9yW"/>
+                                    <constraint firstAttribute="width" constant="285" id="jeo-nu-lIS"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="comment" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bOV-JE-dtI">
+                                <rect key="frame" x="54" y="419" width="285" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="86C-Uh-xZa">
+                                <rect key="frame" x="154" y="488" width="84" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="UpLoad"/>
+                                <connections>
+                                    <action selector="actionButtonClicked:" destination="xsZ-EF-EQV" eventType="touchUpInside" id="yyH-IF-KEU"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="dFT-QY-Ucr"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="nLE-zx-iiM" firstAttribute="centerX" secondItem="ZvV-Lx-8tF" secondAttribute="centerX" id="3po-n0-6Tu"/>
+                            <constraint firstItem="86C-Uh-xZa" firstAttribute="top" secondItem="bOV-JE-dtI" secondAttribute="bottom" constant="35" id="4fd-b0-QS3"/>
+                            <constraint firstItem="86C-Uh-xZa" firstAttribute="leading" secondItem="dFT-QY-Ucr" secondAttribute="leading" constant="154" id="TSG-fQ-0rN"/>
+                            <constraint firstItem="nLE-zx-iiM" firstAttribute="top" secondItem="dFT-QY-Ucr" secondAttribute="top" constant="107" id="bMS-va-w9G"/>
+                            <constraint firstItem="nLE-zx-iiM" firstAttribute="trailing" secondItem="bOV-JE-dtI" secondAttribute="trailing" id="cfX-Ia-wON"/>
+                            <constraint firstItem="bOV-JE-dtI" firstAttribute="centerX" secondItem="86C-Uh-xZa" secondAttribute="centerX" id="gpf-zP-lb7"/>
+                            <constraint firstItem="nLE-zx-iiM" firstAttribute="leading" secondItem="bOV-JE-dtI" secondAttribute="leading" id="hLh-98-0lR"/>
+                            <constraint firstItem="bOV-JE-dtI" firstAttribute="top" secondItem="nLE-zx-iiM" secondAttribute="bottom" constant="37" id="j2P-1y-6PX"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Upload" image="u.circle.fill" catalog="system" id="IRU-wJ-dod"/>
+                    <connections>
+                        <outlet property="commentText" destination="bOV-JE-dtI" id="eTk-D4-8U1"/>
+                        <outlet property="imageView" destination="nLE-zx-iiM" id="yaW-ne-1lc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hoA-Tw-SLY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1027" y="23"/>
+            <point key="canvasLocation" x="1026.7175572519084" y="22.535211267605636"/>
         </scene>
         <!--Settings-->
         <scene sceneID="Uoc-ei-awQ">
@@ -96,7 +132,7 @@
                                 <rect key="frame" x="118" y="249" width="157" height="118"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="LogOut"/>
                                 <connections>
                                     <action selector="buttonClicked:" destination="lrO-sP-KSe" eventType="touchUpInside" id="r0h-5E-CEL"/>
                                     <segue destination="BYZ-38-t0r" kind="presentation" identifier="toDetailsVC" modalPresentationStyle="fullScreen" id="h9J-p8-Qz0"/>
@@ -153,6 +189,7 @@
     <resources>
         <image name="f.circle.fill" catalog="system" width="128" height="123"/>
         <image name="s.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="select" width="285" height="275"/>
         <image name="u.circle.fill" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
